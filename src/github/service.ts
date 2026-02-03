@@ -1,6 +1,10 @@
 import { env } from 'bun'
 import { fetchGitHubData } from './client'
-import { type RepositoryNode, type UserStats } from 'types/github'
+import {
+    type ProfileStatsResult,
+    type RepositoryNode,
+    type UserStats
+} from 'types/github'
 import { PROFILE_STATS_QUERY } from './queries'
 
 const aggregateRepoStats = (repos: RepositoryNode[]) => {
@@ -41,7 +45,7 @@ const aggregateLanguages = (repos: RepositoryNode[]) => {
         .map(([name, info]) => ({ name, ...info }))
 }
 
-export const getProfileStats = async () => {
+export const getProfileStats = async (): Promise<ProfileStatsResult> => {
     const username = env.GITHUB_USERNAME
     if (!username) throw new Error('GITHUB_USERNAME is not defined in .env')
 

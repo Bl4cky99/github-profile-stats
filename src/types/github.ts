@@ -34,3 +34,22 @@ export interface UserStats {
         }
     }
 }
+
+export interface TopLanguage {
+    name: string
+    size: number
+    color: string
+}
+
+export interface ProfileStatsResult {
+    name: string
+    totalRepos: number
+    privateRepos: number
+    totalCommits: number
+    stars: number
+    openIssues: number
+    closedIssues: number
+    pullRequests: number
+    closedPullRequests: number
+    topLanguages: TopLanguage[]
+}
