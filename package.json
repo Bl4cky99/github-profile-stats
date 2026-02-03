@@ -7,7 +7,7 @@
     "scripts": {
         "start": "bun run src/app.ts",
         "dev": "bun --watch run src/app.ts",
-        "build": "bun build src/app.ts --outfile ./out/app.js",
+        "build": "bun build src/app.ts --outfile ./out/app.js --target 'bun'",
         "lint": "eslint ./src",
         "lint:fix": "eslint ./src --fix && prettier --write ./src"
     },

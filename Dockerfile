@@ -11,7 +11,7 @@ COPY . .
 
 RUN bun run build
 
-FROM oven/bun:latest as prod
+FROM oven/bun:latest AS prod
 
 WORKDIR /app
 

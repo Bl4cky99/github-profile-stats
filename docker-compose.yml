@@ -3,8 +3,10 @@ services:
     container_name: github_profile_stats
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
       target: prod
+    env_file:
+      - .env
     restart: unless-stopped
     ports:
       - '3000:3000'
