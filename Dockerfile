@@ -13,6 +13,8 @@ RUN bun run build
 
 FROM oven/bun:latest AS prod
 
+ENV NODE_ENV=production
+
 WORKDIR /app
 
 COPY --from=build /build/out/app.js .
