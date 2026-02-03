@@ -1,5 +1,5 @@
 {
-    "name": "github_profile_stats",
+    "name": "github-profile-stats",
     "module": "src/app.ts",
     "type": "module",
     "version": "0.0.0",
