@@ -39,6 +39,7 @@
     </ul>
   </li>
   <li><a href="#license">License</a></li>
+  <li><a href="#credits">Credits & Third-Party Assets</a></li>
 </ol>
 </details>
 
@@ -100,15 +101,16 @@ bun run lint:fix
 
 The service is configured via environment variables:
 
-| Variable                  | Description                                           | Default       |
-| :------------------------ | :---------------------------------------------------- | :------------ |
-| `GITHUB_TOKEN`            | Personal Access Token for GitHub API (Required)       | -             |
-| `GITHUB_USERNAME`         | Your GitHub username for data fetching (Required)     | -             |
-| `PORT`                    | Port the server listens on                            | `3000`        |
-| `CACHE_TTL_SECONDS`       | Time-to-live for cached GitHub data in seconds        | `3600`        |
-| `LOG_LEVEL`               | Logging verbosity (`debug`, `info`, `warn`, `error`)  | `info`        |
-| `PROFILE_NUMBER_OF_LANGS` | Number of top languages to show in the legend         | `3`           |
-| `NODE_ENV`                | Environment mode (`production` triggers JSON logging) | `development` |
+| Variable               | Description                                           | Default       |
+| :--------------------- | :---------------------------------------------------- | :------------ |
+| `GITHUB_TOKEN`         | Personal Access Token for GitHub API (Required)       | -             |
+| `GITHUB_USERNAME`      | Your GitHub username for data fetching (Required)     | -             |
+| `PORT`                 | Port the server listens on                            | `3000`        |
+| `CACHE_TTL_SECONDS`    | Time-to-live for cached GitHub data in seconds        | `3600`        |
+| `LOG_LEVEL`            | Logging verbosity (`debug`, `info`, `warn`, `error`)  | `info`        |
+| `PROFILE_NUMBER_LANGS` | Number of top languages to show in the legend         | `3`           |
+| `PROFILE_FILTER_LANGS` | Languages to filter out of the legend                 | -             |
+| `NODE_ENV`             | Environment mode (`production` triggers JSON logging) | `development` |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
