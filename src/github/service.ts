@@ -34,6 +34,9 @@ const aggregateLanguages = (repos: RepositoryNode[]) => {
 
     for (const repo of repos) {
         for (const { size, node } of repo.languages.edges) {
+            if (config.PROFILE_FILTER_LANGS.includes(node.name.toLowerCase()))
+                continue
+
             if (!map[node.name]) map[node.name] = { size: 0, color: node.color }
             map[node.name]!.size += size
         }

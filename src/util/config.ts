@@ -8,7 +8,16 @@ const envSchema = z.object({
     CACHE_TTL_SECONDS: z.coerce.number().int().positive().default(3600),
     LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']),
 
-    PROFILE_NUMBER_LANGS: z.coerce.number().int().positive().default(3)
+    PROFILE_NUMBER_LANGS: z.coerce.number().int().positive().default(3),
+    PROFILE_FILTER_LANGS: z
+        .string()
+        .default('')
+        .transform((s) =>
+            s
+                .split(',')
+                .map((x) => x.trim().toLowerCase())
+                .filter(Boolean)
+        )
 })
 
 function loadConfig() {
