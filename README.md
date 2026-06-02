@@ -134,10 +134,12 @@ No parameters needed, everything is setup [here](#configuration).
 
 ### <span id="rendering-engine">Rendering Engine</span>
 
-The SVG generation uses a custom-built mathematical approach to layout. It calculates the geometry for the donut rings and coordinates for text elements without external dependencies.
+The SVG generation is built on [Satori](https://github.com/vercel/satori), which translates JSX-defined layouts into static SVG. Instead of manually computing coordinates, each card is described as a set of composable components and arranged by Satori's Flexbox engine (powered by Yoga), keeping the layout declarative and easy to restructure.
 
-- **Donut Ring**: Built using SVG paths and arc calculations.
-- **Dynamic Legend**: Uses a text-width estimation utility to align the language name, color box, and percentage values in a right-justified block.
+- **JSX without React**: Components are authored in JSX and compiled through Satori's built-in JSX runtime (`satori/jsx`), so no React dependency is pulled into the bundle.
+- **Flexbox Layout**: Positioning, alignment, and spacing are handled entirely by Satori/Yoga — no hand-rolled geometry or text-width estimation.
+- **Language Breakdown**: Rendered as a full-width stacked bar plus a centered, wrapping legend, with each segment's width derived directly from its language's share.
+- **Typography**: Text is set in the [Kanit](./fonts/OFL.txt) typeface and embedded as vector path outlines, so the output SVG is self-contained and renders identically everywhere without the font being installed on the client.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
