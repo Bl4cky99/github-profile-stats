@@ -1,5 +1,6 @@
-import { env, fetch } from 'bun'
+import { fetch } from 'bun'
 import type { GitHubResponse } from '@/types/github'
+import { config } from '@/util/config'
 
 const GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql'
 
@@ -7,14 +8,11 @@ export const fetchGitHubData = async <T>(
     query: string,
     variables: object = {}
 ): Promise<T> => {
-    const token = env.GITHUB_TOKEN
-    if (!token) throw new Error('GITHUB_TOKEN is not defined in .env')
-
     const response = await fetch(GITHUB_GRAPHQL_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${config.GITHUB_TOKEN}`
         },
         body: JSON.stringify({ query, variables })
     })

@@ -1,9 +1,9 @@
-import { env } from 'bun'
 import { profileStatsHandler } from '@/handlers/profile'
+import { config } from '@/util/config'
 
 export const SVG_HEADERS = {
     'Content-Type': 'image/svg+xml',
-    'Cache-Control': `public, max-age=${env.CACHE_TTL_SECONDS ?? 3600}`
+    'Cache-Control': `public, max-age=${config.CACHE_TTL_SECONDS}`
 }
 
 export const handleRoute = async (req: Request): Promise<Response> => {

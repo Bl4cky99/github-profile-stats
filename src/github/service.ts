@@ -1,4 +1,3 @@
-import { env } from 'bun'
 import { fetchGitHubData } from '@/github/client'
 import {
     type ProfileStatsResult,
@@ -6,6 +5,7 @@ import {
     type UserStats
 } from '@/types/github'
 import { PROFILE_STATS_QUERY } from '@/github/queries'
+import { config } from '@/util/config'
 
 const aggregateRepoStats = (repos: RepositoryNode[]) => {
     return repos.reduce(
@@ -41,16 +41,13 @@ const aggregateLanguages = (repos: RepositoryNode[]) => {
 
     return Object.entries(map)
         .sort((a, b) => b[1].size - a[1].size)
-        .slice(0, env.PROFILE_NUMBER_OF_LANGS ?? 10)
+        .slice(0, config.PROFILE_NUMBER_LANGS)
         .map(([name, info]) => ({ name, ...info }))
 }
 
 export const getProfileStats = async (): Promise<ProfileStatsResult> => {
-    const username = env.GITHUB_USERNAME
-    if (!username) throw new Error('GITHUB_USERNAME is not defined in .env')
-
     const data = await fetchGitHubData<UserStats>(PROFILE_STATS_QUERY, {
-        username
+        username: config.GITHUB_USERNAME
     })
     const { user } = data
     const repos = user.repositories.nodes
