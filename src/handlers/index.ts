@@ -1,5 +1,5 @@
 import { env } from 'bun'
-import { profileStatsHandler } from './profile'
+import { profileStatsHandler } from '@/handlers/profile'
 
 export const SVG_HEADERS = {
     'Content-Type': 'image/svg+xml',

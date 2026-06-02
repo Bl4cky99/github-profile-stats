@@ -1,5 +1,5 @@
 import { env, fetch } from 'bun'
-import type { GitHubResponse } from 'types/github'
+import type { GitHubResponse } from '@/types/github'
 
 const GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql'
 

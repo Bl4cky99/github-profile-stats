@@ -1,5 +1,5 @@
-import { describeArc, escapeXml, truncateText, C } from 'renderer'
-import type { ProfileStatsResult, TopLanguage } from 'types/github'
+import { describeArc, escapeXml, truncateText, C } from '@/renderer'
+import type { ProfileStatsResult, TopLanguage } from '@/types/github'
 
 const W = 800
 const H = 300

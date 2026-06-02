@@ -1,6 +1,6 @@
 import { serve } from 'bun'
-import { handleRoute } from 'handlers'
-import { logger } from 'util/logger'
+import { handleRoute } from '@/handlers'
+import { logger } from '@/util/logger'
 
 const server = serve({
     port: 3000,

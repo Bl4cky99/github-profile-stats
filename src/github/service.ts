@@ -1,11 +1,11 @@
 import { env } from 'bun'
-import { fetchGitHubData } from './client'
+import { fetchGitHubData } from '@/github/client'
 import {
     type ProfileStatsResult,
     type RepositoryNode,
     type UserStats
-} from 'types/github'
-import { PROFILE_STATS_QUERY } from './queries'
+} from '@/types/github'
+import { PROFILE_STATS_QUERY } from '@/github/queries'
 
 const aggregateRepoStats = (repos: RepositoryNode[]) => {
     return repos.reduce(

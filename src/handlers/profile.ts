@@ -1,10 +1,10 @@
 import { env } from 'bun'
-import { getProfileStats } from 'github/service'
-import { SVG_HEADERS } from 'handlers'
-import { renderProfileCard } from 'renderer/profile'
-import { getOrSetCache } from 'util/cache'
-import { getErrorMessage } from 'util/error'
-import { logger } from 'util/logger'
+import { getProfileStats } from '@/github/service'
+import { SVG_HEADERS } from '@/handlers'
+import { renderProfileCard } from '@/renderer/profile'
+import { getOrSetCache } from '@/util/cache'
+import { getErrorMessage } from '@/util/error'
+import { logger } from '@/util/logger'
 
 export const profileStatsHandler = async (req: Request): Promise<Response> => {
     try {
