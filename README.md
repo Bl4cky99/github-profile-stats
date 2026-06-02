@@ -152,4 +152,16 @@ This project is licensed under the **MIT License**.
 
 ---
 
+## <span id="credits">Credits & Third-Party Assets</span>
+
+The source code of this project is licensed under the MIT License (see [LICENSE](./LICENSE)).
+
+Bundled assets are licensed separately under their own terms:
+
+- **Kanit** — © Cadson Demak, licensed under the [SIL Open Font License 1.1](./fonts/OFL.txt).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
 **Happy profile riceing!**

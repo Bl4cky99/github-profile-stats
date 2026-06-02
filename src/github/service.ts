@@ -60,6 +60,7 @@ export const getProfileStats = async (): Promise<ProfileStatsResult> => {
 
     return {
         name: user.name,
+        login: user.login,
         totalRepos: user.repositories.totalCount,
         privateRepos: stats.privateRepos,
         totalCommits:

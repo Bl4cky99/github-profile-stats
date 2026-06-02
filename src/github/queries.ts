@@ -2,6 +2,7 @@ export const PROFILE_STATS_QUERY = `
     query($username: String!) {
         user(login: $username) {
             name
+            login
             contributionsCollection {
                 totalCommitContributions
                 restrictedContributionsCount

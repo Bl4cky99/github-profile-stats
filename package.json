@@ -2,7 +2,7 @@
     "name": "github-profile-stats",
     "module": "src/app.ts",
     "type": "module",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "private": true,
     "scripts": {
         "start": "bun run src/app.ts",
@@ -16,6 +16,7 @@
         "@types/bun": "latest",
         "eslint": "^9.39.4",
         "globals": "^17.6.0",
+        "jiti": "^2.7.0",
         "prettier": "^3.8.3",
         "typescript-eslint": "^8.60.1"
     },
@@ -23,6 +24,7 @@
         "typescript": "^5.9.3"
     },
     "dependencies": {
+        "satori": "^0.26.0",
         "zod": "^4.4.3"
     }
 }

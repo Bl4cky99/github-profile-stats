@@ -24,6 +24,7 @@ export interface RepositoryNode {
 export interface UserStats {
     user: {
         name: string
+        login: string
         contributionsCollection: {
             totalCommitContributions: number
             restrictedContributionsCount: number
@@ -43,6 +44,7 @@ export interface TopLanguage {
 
 export interface ProfileStatsResult {
     name: string
+    login: string
     totalRepos: number
     privateRepos: number
     totalCommits: number

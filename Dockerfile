@@ -18,5 +18,6 @@ ENV NODE_ENV=production
 WORKDIR /app
 
 COPY --from=build /build/out/app.js .
+COPY fonts ./fonts
 
 CMD ["bun", "run", "app.js"]
