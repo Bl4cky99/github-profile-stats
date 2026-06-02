@@ -6,7 +6,7 @@ const envSchema = z.object({
     GITHUB_USERNAME: z.string().min(1, 'may not be empty'),
 
     CACHE_TTL_SECONDS: z.coerce.number().int().positive().default(3600),
-    LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']),
+    LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']).default('info'),
 
     PROFILE_NUMBER_LANGS: z.coerce.number().int().positive().default(3),
     PROFILE_FILTER_LANGS: z
