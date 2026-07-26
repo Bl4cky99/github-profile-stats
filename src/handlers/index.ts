@@ -12,6 +12,18 @@ export const handleRoute = async (req: Request): Promise<Response> => {
     switch (url.pathname) {
         case '/profile.svg':
             return profileStatsHandler(req)
+        case '/health':
+            return new Response(
+                JSON.stringify({
+                    status: 'ok'
+                }),
+                {
+                    status: 200,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            )
         default:
             return new Response('Not found', { status: 404 })
     }
